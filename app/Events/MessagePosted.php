@@ -15,7 +15,7 @@ class MessagePosted
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    protected $user;
+    //protected $user;
     protected $message;
 
     /**
@@ -23,9 +23,9 @@ class MessagePosted
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($message)
     {
-        $this->user = $user;
+       // $this->user = $user;
         $this->message = $message;
     }
 
@@ -33,7 +33,7 @@ class MessagePosted
     {
         // This must always be an array. Since it will be parsed with json_encode()
         return [
-            'user' => $this->user->name,
+            //'user' => $this->user->name,
             'message' => $this->message,
         ];
     }
